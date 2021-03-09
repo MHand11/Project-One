@@ -98,7 +98,6 @@ We have installed the following Beats on these machines:
 - metricbeat 7.6.1
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
 - filebeat will collect specific log events from the webservers and index them. in this case Filebeat has been setup to collect system logs and will return entries from syslog and auth.log
 
@@ -118,7 +117,7 @@ the install-elk.yml from the ansible section
  - filebeat-config.yml to /etc/ansible/files/filebeat.yml
  - metricbeat-config.ymlto /etc/ansible/files/metricbeat.yml
  
-- using nano Update the etc/ansible/hosts file to include
+Use nano Update the etc/ansible/hosts file to include
 - add groups for [websevers] and [elk] if not already done.
 - each of your webservers IP address' under the [webservers] section
 - add the ELK sever ip address to the [elk] section
@@ -126,12 +125,12 @@ the install-elk.yml from the ansible section
 - Each time you enter an IP address make sure that ansible_python_interpreter=/usr/bin/python3 is specified 
 - save file by pressing control-x and then pressing "y" to save the changes you have made.
 
-- Run the playbook using:
+Run the playbook using:
 
 - ansible-playbook /etcansible-playbook /etc/ansible/install-elk.yml
 - ansible-playbook /etc/ansible/roles/filebeat-playbook.yml
 - ansible-playbook /etc/ansible/roles/metricbeat-playbook.yml
 
-- SSH in to the ELK-VM and check ELK is running with :sudo docker ps 
-- navigate to http://137.116.137.173:5601 to check installation has worked as expected and kibana is running successfully.
+SSH in to the ELK-VM and check ELK is running with :sudo docker ps 
+navigate to http://137.116.137.173:5601 to check installation has worked as expected and kibana is running successfully.
 
